@@ -1,4 +1,4 @@
-package com.galeopsis.homework_2
+package com.galeopsis.homework_3
 
 import android.os.Bundle
 import android.util.Log

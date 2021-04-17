@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Homework_2</string>
+    <string name="app_name">Homework_3</string>
 
     <string name="btn_leftbracket">(</string>
     <string name="btn_rightbracket">)</string>
@@ -22,5 +22,6 @@
     <string name="btn_result">=</string>
     <string name="test_text">0123456789/*-+=</string>
     <string name="test_result">for result</string>
+    <string name="ac">AC</string>
 
 </resources>

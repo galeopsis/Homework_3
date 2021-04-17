@@ -62,6 +62,7 @@
             android:id="@+id/btn_ac"
             android:layout_width="89dp"
             android:layout_height="72dp"
+            android:contentDescription="@string/ac"
             android:scaleType="fitXY"
             android:src="@drawable/btn_ac" />
 

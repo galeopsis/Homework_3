@@ -16,7 +16,7 @@ android {
     buildToolsVersion "30.0.2"
 
     defaultConfig {
-        applicationId "com.galeopsis.homework_2"
+        applicationId "com.galeopsis.homework_3"
         minSdkVersion 23
         targetSdkVersion 30
         versionCode 1
