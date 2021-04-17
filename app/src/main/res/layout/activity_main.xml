@@ -1,18 +1,183 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:background="#575454"
+    android:backgroundTint="#575454">
 
-    <TextView
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/calcdisplay"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/tvOperation"
+            android:layout_width="363dp"
+            android:layout_height="58dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="45dp"
+            android:ellipsize="start"
+            android:fontFamily="@font/calc"
+            android:gravity="end"
+            android:singleLine="true"
+            android:text="@string/test_text"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/digit_text" />
+
+        <TextView
+            android:id="@+id/tvResult"
+            android:layout_width="363dp"
+            android:layout_height="58dp"
+            android:layout_gravity="center"
+            android:ellipsize="start"
+            android:fontFamily="@font/calc"
+            android:gravity="end"
+            android:singleLine="true"
+            android:text="@string/test_result"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/digit_text" />
+    </LinearLayout>
+
+    <GridLayout
+        android:id="@+id/gridLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:columnCount="4"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        tools:ignore="MissingConstraints">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+        <Button
+            android:backgroundTint="@color/ac_color"
+            android:text="@string/btn_ac"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/button_text" />
+
+        <Button
+            android:backgroundTint="@color/op_color"
+            android:text="@string/btn_leftbracket"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/button_text" />
+
+
+        <Button
+            android:layout_row="0"
+            android:layout_column="2"
+            android:backgroundTint="@color/op_color"
+            android:text="@string/btn_rightbracket"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/button_text" />
+
+        <Button
+            android:backgroundTint="@color/op_color"
+            android:text="@string/btn_divide"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/button_text" />
+
+        <Button
+            android:backgroundTint="@color/numeric_color"
+            android:text="@string/btn_7"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/button_text" />
+
+        <Button
+            android:backgroundTint="@color/numeric_color"
+            android:text="@string/btn_8"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/button_text" />
+
+        <Button
+            android:backgroundTint="@color/numeric_color"
+            android:text="@string/btn_9"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/button_text" />
+
+        <Button
+            android:backgroundTint="@color/op_color"
+            android:text="@string/btn_multiply"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/button_text" />
+
+        <Button
+            android:backgroundTint="@color/numeric_color"
+            android:text="@string/btn_4"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/button_text" />
+
+        <Button
+            android:backgroundTint="@color/numeric_color"
+            android:text="@string/btn_5"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/button_text" />
+
+        <Button
+            android:backgroundTint="@color/numeric_color"
+            android:text="@string/btn_6"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/button_text" />
+
+        <Button
+            android:backgroundTint="@color/op_color"
+            android:text="@string/btn_plus"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/button_text" />
+
+        <Button
+            android:backgroundTint="@color/numeric_color"
+            android:text="@string/btn_1"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/button_text" />
+
+        <Button
+            android:backgroundTint="@color/numeric_color"
+            android:text="@string/btn_2"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/button_text" />
+
+        <Button
+            android:backgroundTint="@color/numeric_color"
+            android:text="@string/btn_3"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/button_text" />
+
+        <Button
+            android:backgroundTint="@color/op_color"
+            android:text="@string/btn_minus"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/button_text" />
+
+        <Button
+            android:backgroundTint="@color/op_color"
+            android:text="@string/btn_dot"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/button_text" />
+
+        <Button
+            android:backgroundTint="@color/numeric_color"
+            android:text="@string/btn_0"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/button_text" />
+
+        <Button
+            android:backgroundTint="@color/op_color"
+            android:text="@string/btn_backspase"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/button_text" />
+
+        <Button
+            android:backgroundTint="@color/result_color"
+            android:text="@string/btn_result"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/button_text" />
+    </GridLayout>
+</FrameLayout>
