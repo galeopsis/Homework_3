@@ -17,8 +17,8 @@
 
         <TextView
             android:id="@+id/tvOperation"
-            android:layout_width="650dp"
-            android:layout_height="50dp"
+            android:layout_width="@dimen/opField_LSwSize"
+            android:layout_height="@dimen/opField_LShSize"
             android:layout_gravity="center"
             android:layout_marginTop="25dp"
             android:ellipsize="start"
@@ -31,8 +31,8 @@
 
         <TextView
             android:id="@+id/tvResult"
-            android:layout_width="650dp"
-            android:layout_height="50dp"
+            android:layout_width="@dimen/opField_LSwSize"
+            android:layout_height="@dimen/opField_LShSize"
             android:layout_gravity="center"
             android:ellipsize="start"
             android:fontFamily="@font/calc"

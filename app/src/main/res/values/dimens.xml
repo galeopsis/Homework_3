@@ -3,4 +3,8 @@
     <dimen name="button_text">40sp</dimen>
     <dimen name="digit_text">45sp</dimen>
     <dimen name="ls_digit_text">25sp</dimen>
+    <dimen name="opField_wSize">350dp</dimen>
+    <dimen name="opField_hSize">58dp</dimen>
+    <dimen name="opField_LSwSize">650dp</dimen>
+    <dimen name="opField_LShSize">50dp</dimen>
 </resources>
