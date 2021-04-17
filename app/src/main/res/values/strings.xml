@@ -23,5 +23,6 @@
     <string name="test_text">0123456789/*-+=</string>
     <string name="test_result">for result</string>
     <string name="ac">AC</string>
+    <string name="empty_button">♦</string>
 
 </resources>

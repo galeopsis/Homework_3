@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,18 +9,18 @@
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="150dp"
         android:background="@drawable/calcdisplay"
         android:orientation="vertical"
+        android:scaleType="fitXY"
         tools:context=".MainActivity">
-
 
         <TextView
             android:id="@+id/tvOperation"
-            android:layout_width="350dp"
-            android:layout_height="58dp"
+            android:layout_width="650dp"
+            android:layout_height="50dp"
             android:layout_gravity="center"
-            android:layout_marginTop="45dp"
+            android:layout_marginTop="25dp"
             android:ellipsize="start"
             android:fontFamily="@font/calc"
             android:gravity="end"
@@ -32,8 +31,8 @@
 
         <TextView
             android:id="@+id/tvResult"
-            android:layout_width="350dp"
-            android:layout_height="58dp"
+            android:layout_width="650dp"
+            android:layout_height="50dp"
             android:layout_gravity="center"
             android:ellipsize="start"
             android:fontFamily="@font/calc"
@@ -48,19 +47,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="100dp"
-        android:columnCount="4"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout"
+        android:layout_marginTop="70dp"
+        android:columnCount="8"
         tools:ignore="MissingConstraints">
-
 
         <ImageButton
             android:id="@+id/btn_ac"
-            android:layout_width="89dp"
-            android:layout_height="72dp"
+            android:layout_width="88dp"
+            android:layout_height="50dp"
             android:contentDescription="@string/ac"
             android:scaleType="fitXY"
             android:src="@drawable/btn_ac" />
@@ -70,8 +64,7 @@
             android:backgroundTint="@color/op_color"
             android:text="@string/btn_leftbracket"
             android:textColor="@android:color/white"
-            android:textSize="@dimen/button_text" />
-
+            android:textSize="@dimen/ls_digit_text" />
 
         <Button
             android:id="@+id/btn_rightbracket"
@@ -80,125 +73,154 @@
             android:backgroundTint="@color/op_color"
             android:text="@string/btn_rightbracket"
             android:textColor="@android:color/white"
-            android:textSize="@dimen/button_text" />
+            android:textSize="@dimen/ls_digit_text" />
 
         <Button
             android:id="@+id/btn_divide"
             android:backgroundTint="@color/op_color"
             android:text="@string/btn_divide"
             android:textColor="@android:color/white"
-            android:textSize="@dimen/button_text" />
-
-        <Button
-            android:id="@+id/btn_7"
-            android:backgroundTint="@color/numeric_color"
-            android:text="@string/btn_7"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/button_text" />
-
-        <Button
-            android:id="@+id/btn_8"
-            android:backgroundTint="@color/numeric_color"
-            android:text="@string/btn_8"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/button_text" />
-
-        <Button
-            android:id="@+id/btn_9"
-            android:backgroundTint="@color/numeric_color"
-            android:text="@string/btn_9"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/button_text" />
+            android:textSize="@dimen/ls_digit_text" />
 
         <Button
             android:id="@+id/btn_multiply"
             android:backgroundTint="@color/op_color"
             android:text="@string/btn_multiply"
             android:textColor="@android:color/white"
-            android:textSize="@dimen/button_text" />
+            android:textSize="@dimen/ls_digit_text" />
 
         <Button
-            android:id="@+id/btn_4"
+            android:id="@+id/btn_7"
             android:backgroundTint="@color/numeric_color"
-            android:text="@string/btn_4"
+            android:text="@string/btn_7"
             android:textColor="@android:color/white"
-            android:textSize="@dimen/button_text" />
+            android:textSize="@dimen/ls_digit_text" />
 
         <Button
-            android:id="@+id/btn_5"
+            android:id="@+id/btn_8"
             android:backgroundTint="@color/numeric_color"
-            android:text="@string/btn_5"
+            android:text="@string/btn_8"
             android:textColor="@android:color/white"
-            android:textSize="@dimen/button_text" />
+            android:textSize="@dimen/ls_digit_text" />
 
         <Button
-            android:id="@+id/btn_6"
+            android:id="@+id/btn_9"
             android:backgroundTint="@color/numeric_color"
-            android:text="@string/btn_6"
+            android:text="@string/btn_9"
             android:textColor="@android:color/white"
-            android:textSize="@dimen/button_text" />
-
-        <Button
-            android:id="@+id/btn_plus"
-            android:backgroundTint="@color/op_color"
-            android:text="@string/btn_plus"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/button_text" />
-
-        <Button
-            android:id="@+id/btn_1"
-            android:backgroundTint="@color/numeric_color"
-            android:text="@string/btn_1"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/button_text" />
-
-        <Button
-            android:id="@+id/btn_2"
-            android:backgroundTint="@color/numeric_color"
-            android:text="@string/btn_2"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/button_text" />
-
-        <Button
-            android:id="@+id/btn_3"
-            android:backgroundTint="@color/numeric_color"
-            android:text="@string/btn_3"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/button_text" />
-
-        <Button
-            android:id="@+id/btn_minus"
-            android:backgroundTint="@color/op_color"
-            android:text="@string/btn_minus"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/button_text" />
-
-        <Button
-            android:id="@+id/btn_dot"
-            android:backgroundTint="@color/op_color"
-            android:text="@string/btn_dot"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/button_text" />
-
-        <Button
-            android:id="@+id/btn_0"
-            android:backgroundTint="@color/numeric_color"
-            android:text="@string/btn_0"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/button_text" />
-
-        <Button
-            android:id="@+id/btn_back"
-            android:backgroundTint="@color/op_color"
-            android:text="@string/btn_back"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/button_text" />
+            android:textSize="@dimen/ls_digit_text" />
 
         <Button
             android:id="@+id/btn_result"
             android:backgroundTint="@color/result_color"
             android:text="@string/btn_result"
             android:textColor="@android:color/white"
-            android:textSize="@dimen/button_text" />
+            android:textSize="@dimen/ls_digit_text" />
+
+        <Button
+            android:id="@+id/btn_back"
+            android:backgroundTint="@color/op_color"
+            android:text="@string/btn_back"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/ls_digit_text" />
+
+        <Button
+            android:id="@+id/btn_dot"
+            android:backgroundTint="@color/op_color"
+            android:text="@string/btn_dot"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/ls_digit_text" />
+
+        <Button
+            android:id="@+id/btn_plus"
+            android:backgroundTint="@color/op_color"
+            android:text="@string/btn_plus"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/ls_digit_text" />
+
+        <Button
+            android:id="@+id/btn_minus"
+            android:backgroundTint="@color/op_color"
+            android:text="@string/btn_minus"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/ls_digit_text" />
+
+        <Button
+            android:id="@+id/btn_4"
+            android:backgroundTint="@color/numeric_color"
+            android:text="@string/btn_4"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/ls_digit_text" />
+
+        <Button
+            android:id="@+id/btn_5"
+            android:backgroundTint="@color/numeric_color"
+            android:text="@string/btn_5"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/ls_digit_text" />
+
+        <Button
+            android:id="@+id/btn_6"
+            android:backgroundTint="@color/numeric_color"
+            android:text="@string/btn_6"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/ls_digit_text" />
+
+        <Button
+            android:id="@+id/btn_empty1"
+            android:backgroundTint="@color/numeric_color"
+            android:text="@string/empty_button"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/ls_digit_text" />
+
+        <Button
+            android:id="@+id/btn_empty2"
+            android:backgroundTint="@color/numeric_color"
+            android:text="@string/empty_button"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/ls_digit_text" />
+
+        <Button
+            android:id="@+id/btn_empty4"
+            android:backgroundTint="@color/numeric_color"
+            android:text="@string/empty_button"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/ls_digit_text" />
+
+        <Button
+            android:id="@+id/btn_empty3"
+            android:backgroundTint="@color/numeric_color"
+            android:text="@string/empty_button"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/ls_digit_text" />
+
+        <Button
+            android:id="@+id/btn_0"
+            android:backgroundTint="@color/numeric_color"
+            android:text="@string/btn_0"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/ls_digit_text" />
+
+        <Button
+            android:id="@+id/btn_1"
+            android:backgroundTint="@color/numeric_color"
+            android:text="@string/btn_1"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/ls_digit_text" />
+
+        <Button
+            android:id="@+id/btn_2"
+            android:backgroundTint="@color/numeric_color"
+            android:text="@string/btn_2"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/ls_digit_text" />
+
+        <Button
+            android:id="@+id/btn_3"
+            android:backgroundTint="@color/numeric_color"
+            android:text="@string/btn_3"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/ls_digit_text" />
+
     </GridLayout>
 </FrameLayout>
