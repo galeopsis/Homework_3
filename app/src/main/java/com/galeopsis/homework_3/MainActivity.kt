@@ -67,8 +67,8 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
+    override fun onStop() {
+        super.onStop()
         val sp = getSharedPreferences("key", 0)
         val sedt = sp?.edit()
         sedt?.putString("textvalue", tvOperation.text.toString())
