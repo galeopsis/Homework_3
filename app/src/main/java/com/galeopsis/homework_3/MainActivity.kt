@@ -13,10 +13,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val sp = getSharedPreferences("key", 0)
-        val sedt = sp?.edit()
+        val spEdit = sp?.edit()
 
-        tvOperation.text = sp?.getString("textvalue", "")
-        tvResult.text = sp?.getString("txtopertaive", "")
+        tvOperation.text = sp?.getString("operation", "")
+        tvResult.text = sp?.getString("result", "")
 
         btn_0.setOnClickListener { setTextFields("0") }
         btn_1.setOnClickListener { setTextFields("1") }
@@ -39,8 +39,8 @@ class MainActivity : AppCompatActivity() {
         btn_ac.setOnClickListener {
             tvOperation.text = ""
             tvResult.text = ""
-            sedt?.clear()
-            sedt?.apply()
+            spEdit?.clear()
+            spEdit?.apply()
         }
 
         btn_back.setOnClickListener {
@@ -52,10 +52,10 @@ class MainActivity : AppCompatActivity() {
 
         btn_result.setOnClickListener {
             try {
-                val ex = ExpressionBuilder(tvOperation.text.toString()).build()
+                val exStr = tvOperation.text.toString()
+                val ex = ExpressionBuilder(exStr).build()
                 val result = ex.evaluate()
                 val longRes = result.toLong()
-
                 if (result == longRes.toDouble())
                     tvResult.text = longRes.toString()
                 else
@@ -70,10 +70,10 @@ class MainActivity : AppCompatActivity() {
     override fun onStop() {
         super.onStop()
         val sp = getSharedPreferences("key", 0)
-        val sedt = sp?.edit()
-        sedt?.putString("textvalue", tvOperation.text.toString())
-        sedt?.putString("txtopertaive", tvResult.text.toString())
-        sedt?.apply()
+        val spEdit = sp?.edit()
+        spEdit?.putString("operation", tvOperation.text.toString())
+        spEdit?.putString("result", tvResult.text.toString())
+        spEdit?.apply()
     }
 
     fun setTextFields(str: String) {

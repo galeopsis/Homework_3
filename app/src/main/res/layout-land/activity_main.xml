@@ -167,7 +167,7 @@
             android:textSize="@dimen/ls_digit_text" />
 
         <Button
-            android:id="@+id/btn_empty1"
+            android:id="@+id/btn_emty_1"
             android:backgroundTint="@color/numeric_color"
             android:text="@string/empty_button"
             android:textColor="@android:color/white"
