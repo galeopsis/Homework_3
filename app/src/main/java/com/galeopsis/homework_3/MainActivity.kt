@@ -95,7 +95,7 @@ class MainActivity : AppCompatActivity() {
         spEdit?.apply()
     }
 
-    fun stop() {
+    private fun stop() {
         val sp = getSharedPreferences("key", 0)
         val spEdit = sp?.edit()
         spEdit?.putString("operation", tvOperation.text.toString())
