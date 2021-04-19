@@ -35,6 +35,40 @@ class MainActivity : AppCompatActivity() {
         btn_plus.setOnClickListener { setTextFields("+") }
         btn_multiply.setOnClickListener { setTextFields("*") }
         btn_divide.setOnClickListener { setTextFields("/") }
+        btn_sin.setOnClickListener { setTextFields("sin") }
+        btn_cos.setOnClickListener { setTextFields("cos") }
+
+        btn_sqrt.setOnClickListener {
+            try {
+                val exStr = ("sqrt(" + tvOperation.text + ")")
+                val ex = ExpressionBuilder(exStr).build()
+                val result = ex.evaluate()
+                val longRes = result.toLong()
+                tvOperation.text = ""
+                if (result == longRes.toDouble())
+                    tvResult.text = longRes.toString()
+                else
+                    tvResult.text = result.toString()
+            } catch (e: Exception) {
+                Log.d("Ошибка!", "Сообщение: ${e.message}")
+            }
+        }
+
+        btn_percent.setOnClickListener {
+            try {
+                val exStr = ("%(" + tvOperation.text + ")")
+                val ex = ExpressionBuilder(exStr).build()
+                val result = ex.evaluate()
+                val longRes = result.toLong()
+                tvOperation.text = ""
+                if (result == longRes.toDouble())
+                    tvResult.text = longRes.toString()
+                else
+                    tvResult.text = result.toString()
+            } catch (e: Exception) {
+                Log.d("Ошибка!", "Сообщение: ${e.message}")
+            }
+        }
 
         btn_ac.setOnClickListener {
             tvOperation.text = ""
@@ -60,7 +94,6 @@ class MainActivity : AppCompatActivity() {
                     tvResult.text = longRes.toString()
                 else
                     tvResult.text = result.toString()
-
             } catch (e: Exception) {
                 Log.d("Ошибка!", "Сообщение: ${e.message}")
             }

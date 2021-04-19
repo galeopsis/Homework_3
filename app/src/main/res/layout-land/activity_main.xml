@@ -167,30 +167,30 @@
             android:textSize="@dimen/ls_digit_text" />
 
         <Button
-            android:id="@+id/btn_emty_1"
+            android:id="@+id/btn_sqrt"
             android:backgroundTint="@color/numeric_color"
-            android:text="@string/empty_button"
+            android:text="√"
+            android:textColor="@android:color/white"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/btn_percent"
+            android:backgroundTint="@color/numeric_color"
+            android:text="@string/percent"
             android:textColor="@android:color/white"
             android:textSize="@dimen/ls_digit_text" />
 
         <Button
-            android:id="@+id/btn_empty2"
+            android:id="@+id/btn_sin"
             android:backgroundTint="@color/numeric_color"
-            android:text="@string/empty_button"
+            android:text="@string/sin"
             android:textColor="@android:color/white"
             android:textSize="@dimen/ls_digit_text" />
 
         <Button
-            android:id="@+id/btn_empty4"
+            android:id="@+id/btn_cos"
             android:backgroundTint="@color/numeric_color"
-            android:text="@string/empty_button"
-            android:textColor="@android:color/white"
-            android:textSize="@dimen/ls_digit_text" />
-
-        <Button
-            android:id="@+id/btn_empty3"
-            android:backgroundTint="@color/numeric_color"
-            android:text="@string/empty_button"
+            android:text="@string/cos"
             android:textColor="@android:color/white"
             android:textSize="@dimen/ls_digit_text" />
 

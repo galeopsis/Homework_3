@@ -47,7 +47,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="80dp"
         android:columnCount="4"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -80,11 +80,39 @@
             android:textSize="@dimen/button_text" />
 
         <Button
+            android:id="@+id/btn_sqrt"
+            android:backgroundTint="@color/op_color"
+            android:text="@string/sqrt"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/button_text" />
+
+        <Button
+            android:id="@+id/btn_percent"
+            android:backgroundTint="@color/op_color"
+            android:text="@string/percent"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/ls_digit_text" />
+
+        <Button
+            android:id="@+id/btn_sin"
+            android:backgroundTint="@color/op_color"
+            android:text="@string/sin"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/ls_digit_text" />
+
+        <Button
+            android:id="@+id/btn_cos"
+            android:backgroundTint="@color/op_color"
+            android:text="@string/cos"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/ls_digit_text" />
+
+        <Button
             android:id="@+id/btn_divide"
             android:backgroundTint="@color/op_color"
             android:text="@string/btn_divide"
             android:textColor="@android:color/white"
-            android:textSize="@dimen/button_text" />
+            android:textSize="@dimen/ls_digit_text" />
 
         <Button
             android:id="@+id/btn_7"
@@ -197,5 +225,6 @@
             android:text="@string/btn_result"
             android:textColor="@android:color/white"
             android:textSize="@dimen/button_text" />
+
     </GridLayout>
 </FrameLayout>
