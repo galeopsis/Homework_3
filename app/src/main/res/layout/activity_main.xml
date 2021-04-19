@@ -56,7 +56,7 @@
         tools:ignore="MissingConstraints">
 
         <ImageButton
-            android:id="@+id/btn_ac"
+            android:id="@+id/btn_shutdown"
             android:layout_width="89dp"
             android:layout_height="72dp"
             android:contentDescription="@string/ac"
@@ -87,9 +87,9 @@
             android:textSize="@dimen/button_text" />
 
         <Button
-            android:id="@+id/btn_percent"
+            android:id="@+id/btn_AC"
             android:backgroundTint="@color/op_color"
-            android:text="@string/percent"
+            android:text="@string/ac"
             android:textColor="@android:color/white"
             android:textSize="@dimen/ls_digit_text" />
 

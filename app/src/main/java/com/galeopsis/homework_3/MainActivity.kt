@@ -54,27 +54,16 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        btn_percent.setOnClickListener {
-            try {
-                val exStr = ("%(" + tvOperation.text + ")")
-                val ex = ExpressionBuilder(exStr).build()
-                val result = ex.evaluate()
-                val longRes = result.toLong()
-                tvOperation.text = ""
-                if (result == longRes.toDouble())
-                    tvResult.text = longRes.toString()
-                else
-                    tvResult.text = result.toString()
-            } catch (e: Exception) {
-                Log.d("Ошибка!", "Сообщение: ${e.message}")
-            }
-        }
-
-        btn_ac.setOnClickListener {
+        btn_AC.setOnClickListener {
             tvOperation.text = ""
             tvResult.text = ""
             spEdit?.clear()
             spEdit?.apply()
+        }
+
+        btn_shutdown.setOnClickListener {
+            onStop()
+            System.exit(0)
         }
 
         btn_back.setOnClickListener {

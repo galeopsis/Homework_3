@@ -25,8 +25,8 @@
     <string name="ac">AC</string>
     <string name="empty_button">♦</string>
     <string name="percent">%</string>
-    <string name="sqrt">√</string>
     <string name="sin">sin</string>
     <string name="cos">cos</string>
+    <string name="sqrt">√</string>
 
 </resources>

@@ -52,7 +52,7 @@
         tools:ignore="MissingConstraints">
 
         <ImageButton
-            android:id="@+id/btn_ac"
+            android:id="@+id/btn_shutdown"
             android:layout_width="88dp"
             android:layout_height="50dp"
             android:contentDescription="@string/ac"
@@ -111,9 +111,9 @@
             android:textSize="@dimen/ls_digit_text" />
 
         <Button
-            android:id="@+id/btn_result"
-            android:backgroundTint="@color/result_color"
-            android:text="@string/btn_result"
+            android:id="@+id/btn_AC"
+            android:backgroundTint="@color/op_color"
+            android:text="@string/ac"
             android:textColor="@android:color/white"
             android:textSize="@dimen/ls_digit_text" />
 
@@ -167,18 +167,18 @@
             android:textSize="@dimen/ls_digit_text" />
 
         <Button
-            android:id="@+id/btn_sqrt"
-            android:backgroundTint="@color/numeric_color"
-            android:text="√"
-            android:textColor="@android:color/white"
-            android:textSize="25sp" />
-
-        <Button
-            android:id="@+id/btn_percent"
-            android:backgroundTint="@color/numeric_color"
-            android:text="@string/percent"
+            android:id="@+id/btn_result"
+            android:backgroundTint="@color/result_color"
+            android:text="@string/btn_result"
             android:textColor="@android:color/white"
             android:textSize="@dimen/ls_digit_text" />
+
+        <Button
+            android:id="@+id/btn_sqrt"
+            android:backgroundTint="@color/numeric_color"
+            android:text="@string/sqrt"
+            android:textColor="@android:color/white"
+            android:textSize="25sp" />
 
         <Button
             android:id="@+id/btn_sin"
