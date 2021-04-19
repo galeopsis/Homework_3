@@ -5,6 +5,7 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import net.objecthunter.exp4j.ExpressionBuilder
+import kotlin.system.exitProcess
 
 class MainActivity : AppCompatActivity() {
 
@@ -37,6 +38,7 @@ class MainActivity : AppCompatActivity() {
         btn_divide.setOnClickListener { setTextFields("/") }
         btn_sin.setOnClickListener { setTextFields("sin") }
         btn_cos.setOnClickListener { setTextFields("cos") }
+        btn_shutdown.setOnClickListener { stop() }
 
         btn_sqrt.setOnClickListener {
             try {
@@ -59,11 +61,6 @@ class MainActivity : AppCompatActivity() {
             tvResult.text = ""
             spEdit?.clear()
             spEdit?.apply()
-        }
-
-        btn_shutdown.setOnClickListener {
-            onStop()
-            System.exit(0)
         }
 
         btn_back.setOnClickListener {
@@ -98,7 +95,16 @@ class MainActivity : AppCompatActivity() {
         spEdit?.apply()
     }
 
-    fun setTextFields(str: String) {
+    fun stop() {
+        val sp = getSharedPreferences("key", 0)
+        val spEdit = sp?.edit()
+        spEdit?.putString("operation", tvOperation.text.toString())
+        spEdit?.putString("result", tvResult.text.toString())
+        spEdit?.apply()
+        exitProcess(0)
+    }
+
+    private fun setTextFields(str: String) {
         if (tvResult.text != "") {
             tvOperation.text = tvResult.text
             tvResult.text = ""
