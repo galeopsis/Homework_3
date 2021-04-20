@@ -3,112 +3,113 @@ package com.galeopsis.homework_3
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_main.*
-import net.objecthunter.exp4j.ExpressionBuilder
+import com.fathzer.soft.javaluator.DoubleEvaluator
+import com.galeopsis.homework_3.databinding.ActivityMainBinding
+import kotlin.math.sqrt
 import kotlin.system.exitProcess
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityMainBinding
+    private val keyOperation = "OPERATION"
+    private val keyResult = "RESULT"
+    private val evaluator = DoubleEvaluator()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
 
-        val sp = getSharedPreferences("key", 0)
-        val spEdit = sp?.edit()
+        with(binding) {
 
-        tvOperation.text = sp?.getString("operation", "")
-        tvResult.text = sp?.getString("result", "")
+            if (savedInstanceState != null) {
+                tvOperation.text = savedInstanceState.getCharSequence(keyOperation)
+                tvResult.text = savedInstanceState.getCharSequence(keyResult)
+            }
 
-        btn_0.setOnClickListener { setTextFields("0") }
-        btn_1.setOnClickListener { setTextFields("1") }
-        btn_2.setOnClickListener { setTextFields("2") }
-        btn_3.setOnClickListener { setTextFields("3") }
-        btn_4.setOnClickListener { setTextFields("4") }
-        btn_5.setOnClickListener { setTextFields("5") }
-        btn_6.setOnClickListener { setTextFields("6") }
-        btn_7.setOnClickListener { setTextFields("7") }
-        btn_8.setOnClickListener { setTextFields("8") }
-        btn_9.setOnClickListener { setTextFields("9") }
-        btn_leftbracket.setOnClickListener { setTextFields("(") }
-        btn_rightbracket.setOnClickListener { setTextFields(")") }
-        btn_dot.setOnClickListener { setTextFields(".") }
-        btn_minus.setOnClickListener { setTextFields("-") }
-        btn_plus.setOnClickListener { setTextFields("+") }
-        btn_multiply.setOnClickListener { setTextFields("*") }
-        btn_divide.setOnClickListener { setTextFields("/") }
-        btn_sin.setOnClickListener { setTextFields("sin") }
-        btn_cos.setOnClickListener { setTextFields("cos") }
-        btn_shutdown.setOnClickListener { stop() }
+            btn0.setOnClickListener { setTextFields("0") }
+            btn1.setOnClickListener { setTextFields("1") }
+            btn2.setOnClickListener { setTextFields("2") }
+            btn3.setOnClickListener { setTextFields("3") }
+            btn4.setOnClickListener { setTextFields("4") }
+            btn5.setOnClickListener { setTextFields("5") }
+            btn6.setOnClickListener { setTextFields("6") }
+            btn7.setOnClickListener { setTextFields("7") }
+            btn8.setOnClickListener { setTextFields("8") }
+            btn9.setOnClickListener { setTextFields("9") }
+            btnLeftBracket.setOnClickListener { setTextFields("(") }
+            btnRightBracket.setOnClickListener { setTextFields(")") }
+            btnDot.setOnClickListener { setTextFields(".") }
+            btnMinus.setOnClickListener { setTextFields("-") }
+            btnPlus.setOnClickListener { setTextFields("+") }
+            btnMultiply.setOnClickListener { setTextFields("*") }
+            btnDivide.setOnClickListener { setTextFields("/") }
+            btnSin.setOnClickListener { setTextFields("sin") }
+            btnCos.setOnClickListener { setTextFields("cos") }
+            btnShutdown.setOnClickListener { exitProcess(0) }
 
-        btn_sqrt.setOnClickListener {
-            try {
-                val exStr = ("sqrt(" + tvOperation.text + ")")
-                val ex = ExpressionBuilder(exStr).build()
-                val result = ex.evaluate()
-                val longRes = result.toLong()
+            btnSqrt.setOnClickListener {
+                try {
+                    val exStr = tvOperation.text.toString()
+                    val result = sqrt(exStr.toDouble())
+                    val longRes = result.toLong()
+                    tvOperation.text = ""
+                    if (result == longRes.toDouble())
+                        tvResult.text = longRes.toString()
+                    else
+                        tvResult.text = result.toString()
+                } catch (e: Exception) {
+                    Log.d("Ошибка!", "Сообщение: ${e.message}")
+                }
+            }
+
+            btnResult.setOnClickListener {
+                try {
+                    val expression = tvOperation.text.toString()
+                    val expResult = evaluator.evaluate(expression)
+                    val longRes = expResult.toLong()
+                    if (expResult == longRes.toDouble())
+                        tvResult.text = longRes.toString()
+                    else
+                        tvResult.text = expResult.toString()
+                } catch (e: Exception) {
+                    Log.d("Ошибка!", "Сообщение: ${e.message}")
+                }
+            }
+
+            btnAC.setOnClickListener {
                 tvOperation.text = ""
-                if (result == longRes.toDouble())
-                    tvResult.text = longRes.toString()
-                else
-                    tvResult.text = result.toString()
-            } catch (e: Exception) {
-                Log.d("Ошибка!", "Сообщение: ${e.message}")
+                tvResult.text = ""
+            }
+
+            btnBack.setOnClickListener {
+                val str = tvOperation.text.toString()
+                if (str.isNotEmpty())
+                    tvOperation.text = str.substring(0, str.length - 1)
+                tvResult.text = ""
             }
         }
-
-        btn_AC.setOnClickListener {
-            tvOperation.text = ""
-            tvResult.text = ""
-            spEdit?.clear()
-            spEdit?.apply()
-        }
-
-        btn_back.setOnClickListener {
-            val str = tvOperation.text.toString()
-            if (str.isNotEmpty())
-                tvOperation.text = str.substring(0, str.length - 1)
-            tvResult.text = ""
-        }
-
-        btn_result.setOnClickListener {
-            try {
-                val exStr = tvOperation.text.toString()
-                val ex = ExpressionBuilder(exStr).build()
-                val result = ex.evaluate()
-                val longRes = result.toLong()
-                if (result == longRes.toDouble())
-                    tvResult.text = longRes.toString()
-                else
-                    tvResult.text = result.toString()
-            } catch (e: Exception) {
-                Log.d("Ошибка!", "Сообщение: ${e.message}")
-            }
-        }
-    }
-
-    override fun onStop() {
-        super.onStop()
-        val sp = getSharedPreferences("key", 0)
-        val spEdit = sp?.edit()
-        spEdit?.putString("operation", tvOperation.text.toString())
-        spEdit?.putString("result", tvResult.text.toString())
-        spEdit?.apply()
-    }
-
-    private fun stop() {
-        val sp = getSharedPreferences("key", 0)
-        val spEdit = sp?.edit()
-        spEdit?.putString("operation", tvOperation.text.toString())
-        spEdit?.putString("result", tvResult.text.toString())
-        spEdit?.apply()
-        exitProcess(0)
     }
 
     private fun setTextFields(str: String) {
-        if (tvResult.text != "") {
-            tvOperation.text = tvResult.text
-            tvResult.text = ""
+        if (binding.tvResult.text != "") {
+            binding.tvOperation.text = binding.tvResult.text
+            binding.tvResult.text = ""
         }
-        tvOperation.append(str)
+        binding.tvOperation.append(str)
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putCharSequence(keyOperation, binding.tvOperation.text)
+        outState.putCharSequence(keyResult, binding.tvResult.text)
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        savedInstanceState.getCharSequence(keyOperation)
+        savedInstanceState.getCharSequence(keyResult)
     }
 }
+

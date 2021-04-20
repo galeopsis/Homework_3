@@ -24,7 +24,7 @@
             android:ellipsize="start"
             android:fontFamily="@font/calc"
             android:gravity="end"
-            android:hint="@string/btn_0"
+            android:hint="@string/hintTvOperation"
             android:singleLine="true"
             android:textColor="@android:color/black"
             android:textSize="@dimen/digit_text" />
@@ -56,7 +56,7 @@
         tools:ignore="MissingConstraints">
 
         <ImageButton
-            android:id="@+id/btn_shutdown"
+            android:id="@+id/btnShutdown"
             android:layout_width="89dp"
             android:layout_height="72dp"
             android:contentDescription="@string/ac"
@@ -64,165 +64,165 @@
             android:src="@drawable/btn_ac" />
 
         <Button
-            android:id="@+id/btn_leftbracket"
+            android:id="@+id/btnLeftBracket"
             android:backgroundTint="@color/op_color"
-            android:text="@string/btn_leftbracket"
+            android:text="@string/btnLeftBracket"
             android:textColor="@android:color/white"
             android:textSize="@dimen/button_text" />
 
         <Button
-            android:id="@+id/btn_rightbracket"
+            android:id="@+id/btnRightBracket"
             android:layout_row="0"
             android:layout_column="2"
             android:backgroundTint="@color/op_color"
-            android:text="@string/btn_rightbracket"
+            android:text="@string/btnRightBracket"
             android:textColor="@android:color/white"
             android:textSize="@dimen/button_text" />
 
         <Button
-            android:id="@+id/btn_sqrt"
+            android:id="@+id/btnSqrt"
             android:backgroundTint="@color/op_color"
             android:text="@string/sqrt"
             android:textColor="@android:color/white"
             android:textSize="@dimen/button_text" />
 
         <Button
-            android:id="@+id/btn_AC"
+            android:id="@+id/btnAC"
             android:backgroundTint="@color/op_color"
             android:text="@string/ac"
             android:textColor="@android:color/white"
             android:textSize="@dimen/ls_digit_text" />
 
         <Button
-            android:id="@+id/btn_sin"
+            android:id="@+id/btnSin"
             android:backgroundTint="@color/op_color"
             android:text="@string/sin"
             android:textColor="@android:color/white"
             android:textSize="@dimen/ls_digit_text" />
 
         <Button
-            android:id="@+id/btn_cos"
+            android:id="@+id/btnCos"
             android:backgroundTint="@color/op_color"
             android:text="@string/cos"
             android:textColor="@android:color/white"
             android:textSize="@dimen/ls_digit_text" />
 
         <Button
-            android:id="@+id/btn_divide"
+            android:id="@+id/btnDivide"
             android:backgroundTint="@color/op_color"
-            android:text="@string/btn_divide"
+            android:text="@string/btnDivide"
             android:textColor="@android:color/white"
             android:textSize="@dimen/ls_digit_text" />
 
         <Button
-            android:id="@+id/btn_7"
+            android:id="@+id/btn7"
             android:backgroundTint="@color/numeric_color"
-            android:text="@string/btn_7"
+            android:text="@string/btn7"
             android:textColor="@android:color/white"
             android:textSize="@dimen/button_text" />
 
         <Button
-            android:id="@+id/btn_8"
+            android:id="@+id/btn8"
             android:backgroundTint="@color/numeric_color"
-            android:text="@string/btn_8"
+            android:text="@string/btn8"
             android:textColor="@android:color/white"
             android:textSize="@dimen/button_text" />
 
         <Button
-            android:id="@+id/btn_9"
+            android:id="@+id/btn9"
             android:backgroundTint="@color/numeric_color"
-            android:text="@string/btn_9"
+            android:text="@string/btn9"
             android:textColor="@android:color/white"
             android:textSize="@dimen/button_text" />
 
         <Button
-            android:id="@+id/btn_multiply"
+            android:id="@+id/btnMultiply"
             android:backgroundTint="@color/op_color"
-            android:text="@string/btn_multiply"
+            android:text="@string/btnMultiply"
             android:textColor="@android:color/white"
             android:textSize="@dimen/button_text" />
 
         <Button
-            android:id="@+id/btn_4"
+            android:id="@+id/btn4"
             android:backgroundTint="@color/numeric_color"
-            android:text="@string/btn_4"
+            android:text="@string/btn4"
             android:textColor="@android:color/white"
             android:textSize="@dimen/button_text" />
 
         <Button
-            android:id="@+id/btn_5"
+            android:id="@+id/btn5"
             android:backgroundTint="@color/numeric_color"
-            android:text="@string/btn_5"
+            android:text="@string/btn5"
             android:textColor="@android:color/white"
             android:textSize="@dimen/button_text" />
 
         <Button
-            android:id="@+id/btn_6"
+            android:id="@+id/btn6"
             android:backgroundTint="@color/numeric_color"
-            android:text="@string/btn_6"
+            android:text="@string/btn6"
             android:textColor="@android:color/white"
             android:textSize="@dimen/button_text" />
 
         <Button
-            android:id="@+id/btn_plus"
+            android:id="@+id/btnPlus"
             android:backgroundTint="@color/op_color"
-            android:text="@string/btn_plus"
+            android:text="@string/btnPlus"
             android:textColor="@android:color/white"
             android:textSize="@dimen/button_text" />
 
         <Button
-            android:id="@+id/btn_1"
+            android:id="@+id/btn1"
             android:backgroundTint="@color/numeric_color"
-            android:text="@string/btn_1"
+            android:text="@string/btn1"
             android:textColor="@android:color/white"
             android:textSize="@dimen/button_text" />
 
         <Button
-            android:id="@+id/btn_2"
+            android:id="@+id/btn2"
             android:backgroundTint="@color/numeric_color"
-            android:text="@string/btn_2"
+            android:text="@string/btn2"
             android:textColor="@android:color/white"
             android:textSize="@dimen/button_text" />
 
         <Button
-            android:id="@+id/btn_3"
+            android:id="@+id/btn3"
             android:backgroundTint="@color/numeric_color"
-            android:text="@string/btn_3"
+            android:text="@string/btn3"
             android:textColor="@android:color/white"
             android:textSize="@dimen/button_text" />
 
         <Button
-            android:id="@+id/btn_minus"
+            android:id="@+id/btnMinus"
             android:backgroundTint="@color/op_color"
-            android:text="@string/btn_minus"
+            android:text="@string/btnMinus"
             android:textColor="@android:color/white"
             android:textSize="@dimen/button_text" />
 
         <Button
-            android:id="@+id/btn_dot"
+            android:id="@+id/btnDot"
             android:backgroundTint="@color/op_color"
-            android:text="@string/btn_dot"
+            android:text="@string/btnDot"
             android:textColor="@android:color/white"
             android:textSize="@dimen/button_text" />
 
         <Button
-            android:id="@+id/btn_0"
+            android:id="@+id/btn0"
             android:backgroundTint="@color/numeric_color"
-            android:text="@string/btn_0"
+            android:text="@string/btn0"
             android:textColor="@android:color/white"
             android:textSize="@dimen/button_text" />
 
         <Button
-            android:id="@+id/btn_back"
+            android:id="@+id/btnBack"
             android:backgroundTint="@color/op_color"
-            android:text="@string/btn_back"
+            android:text="@string/btnBack"
             android:textColor="@android:color/white"
             android:textSize="@dimen/button_text" />
 
         <Button
-            android:id="@+id/btn_result"
+            android:id="@+id/btnResult"
             android:backgroundTint="@color/result_color"
-            android:text="@string/btn_result"
+            android:text="@string/btnResult"
             android:textColor="@android:color/white"
             android:textSize="@dimen/button_text" />
 
