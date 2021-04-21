@@ -67,11 +67,9 @@ class MainActivity : AppCompatActivity() {
             val exStr = tvOperation.text.toString()
             val result = kotlin.math.sqrt(exStr.toDouble())
             val longRes = result.toLong()
-            tvOperation.text = ""
-            if (result == longRes.toDouble()) {
-                tvOperation.textSize = 20f
+            if (result == longRes.toDouble())
                 tvOperation.text = longRes.toString()
-            } else
+            else
                 tvOperation.text = result.toString()
         } catch (e: Exception) {
             Log.d("Ошибка!", "Сообщение: ${e.message}")
