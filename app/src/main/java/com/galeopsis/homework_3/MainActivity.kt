@@ -5,14 +5,12 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.fathzer.soft.javaluator.DoubleEvaluator
 import com.galeopsis.homework_3.databinding.ActivityMainBinding
-import kotlin.math.sqrt
 import kotlin.system.exitProcess
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
     private val keyOperation = "OPERATION"
-    private val keyResult = "RESULT"
     private val evaluator = DoubleEvaluator()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,7 +23,6 @@ class MainActivity : AppCompatActivity() {
 
             if (savedInstanceState != null) {
                 tvOperation.text = savedInstanceState.getCharSequence(keyOperation)
-                tvResult.text = savedInstanceState.getCharSequence(keyResult)
             }
 
             btn0.setOnClickListener { setTextFields("0") }
@@ -48,68 +45,65 @@ class MainActivity : AppCompatActivity() {
             btnSin.setOnClickListener { setTextFields("sin") }
             btnCos.setOnClickListener { setTextFields("cos") }
             btnShutdown.setOnClickListener { exitProcess(0) }
-
-            btnSqrt.setOnClickListener {
-                try {
-                    val exStr = tvOperation.text.toString()
-                    val result = sqrt(exStr.toDouble())
-                    val longRes = result.toLong()
-                    tvOperation.text = ""
-                    if (result == longRes.toDouble())
-                        tvResult.text = longRes.toString()
-                    else
-                        tvResult.text = result.toString()
-                } catch (e: Exception) {
-                    Log.d("Ошибка!", "Сообщение: ${e.message}")
-                }
-            }
-
-            btnResult.setOnClickListener {
-                try {
-                    val expression = tvOperation.text.toString()
-                    val expResult = evaluator.evaluate(expression)
-                    val longRes = expResult.toLong()
-                    if (expResult == longRes.toDouble())
-                        tvResult.text = longRes.toString()
-                    else
-                        tvResult.text = expResult.toString()
-                } catch (e: Exception) {
-                    Log.d("Ошибка!", "Сообщение: ${e.message}")
-                }
-            }
-
-            btnAC.setOnClickListener {
-                tvOperation.text = ""
-                tvResult.text = ""
-            }
-
-            btnBack.setOnClickListener {
-                val str = tvOperation.text.toString()
-                if (str.isNotEmpty())
-                    tvOperation.text = str.substring(0, str.length - 1)
-                tvResult.text = ""
-            }
+            btnSqrt.setOnClickListener { sqrt() }
+            btnResult.setOnClickListener { evaluate() }
+            btnAC.setOnClickListener { acButton() }
+            btnBack.setOnClickListener { delete() }
         }
     }
 
-    private fun setTextFields(str: String) {
-        if (binding.tvResult.text != "") {
-            binding.tvOperation.text = binding.tvResult.text
-            binding.tvResult.text = ""
+    private fun ActivityMainBinding.acButton() {
+        tvOperation.text = ""
+    }
+
+    private fun ActivityMainBinding.delete() {
+        val str = tvOperation.text.toString()
+        if (str.isNotEmpty())
+            tvOperation.text = str.substring(0, str.length - 1)
+    }
+
+    private fun ActivityMainBinding.sqrt() {
+        try {
+            val exStr = tvOperation.text.toString()
+            val result = kotlin.math.sqrt(exStr.toDouble())
+            val longRes = result.toLong()
+            tvOperation.text = ""
+            if (result == longRes.toDouble()) {
+                tvOperation.textSize = 20f
+                tvOperation.text = longRes.toString()
+            } else
+                tvOperation.text = result.toString()
+        } catch (e: Exception) {
+            Log.d("Ошибка!", "Сообщение: ${e.message}")
         }
-        binding.tvOperation.append(str)
+    }
+
+    private fun ActivityMainBinding.evaluate() {
+        try {
+            val expression = tvOperation.text.toString()
+            val expResult = evaluator.evaluate(expression)
+            val longRes = expResult.toLong()
+            if (expResult == longRes.toDouble())
+                tvOperation.text = longRes.toString()
+            else
+                tvOperation.text = expResult.toString()
+        } catch (e: Exception) {
+            Log.d("Ошибка!", "Сообщение: ${e.message}")
+        }
+    }
+
+    private fun ActivityMainBinding.setTextFields(str: String) {
+        tvOperation.append(str)
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         outState.putCharSequence(keyOperation, binding.tvOperation.text)
-        outState.putCharSequence(keyResult, binding.tvResult.text)
     }
 
     override fun onRestoreInstanceState(savedInstanceState: Bundle) {
         super.onRestoreInstanceState(savedInstanceState)
         savedInstanceState.getCharSequence(keyOperation)
-        savedInstanceState.getCharSequence(keyResult)
     }
 }
 

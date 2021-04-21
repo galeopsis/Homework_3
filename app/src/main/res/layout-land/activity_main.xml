@@ -21,25 +21,14 @@
             android:layout_height="@dimen/opField_LShSize"
             android:layout_gravity="center"
             android:layout_marginTop="25dp"
-            android:ellipsize="start"
             android:fontFamily="@font/calc"
             android:gravity="end"
             android:hint="@string/hintTvOperation"
+            android:ellipsize="start"
             android:singleLine="true"
             android:textColor="@android:color/black"
             android:textSize="@dimen/digit_text" />
 
-        <TextView
-            android:id="@+id/tvResult"
-            android:layout_width="@dimen/opField_LSwSize"
-            android:layout_height="@dimen/opField_LShSize"
-            android:layout_gravity="center"
-            android:ellipsize="start"
-            android:fontFamily="@font/calc"
-            android:gravity="end"
-            android:singleLine="true"
-            android:textColor="@android:color/black"
-            android:textSize="@dimen/digit_text" />
     </LinearLayout>
 
     <GridLayout
