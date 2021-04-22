@@ -66,11 +66,9 @@ class MainActivity : AppCompatActivity() {
         try {
             val exStr = tvOperation.text.toString()
             val result = kotlin.math.sqrt(exStr.toDouble())
-            val longRes = result.toLong()
-            if (result == longRes.toDouble())
-                tvOperation.text = longRes.toString()
-            else
-                tvOperation.text = result.toString()
+            val doubleRes = result.toLong()
+            tvOperation.text = if (result == doubleRes.toDouble()) doubleRes.toString()
+            else result.toString()
         } catch (e: Exception) {
             Log.d("Ошибка!", "Сообщение: ${e.message}")
         }
@@ -79,12 +77,10 @@ class MainActivity : AppCompatActivity() {
     private fun ActivityMainBinding.evaluate() {
         try {
             val expression = tvOperation.text.toString()
-            val expResult = evaluator.evaluate(expression)
-            val longRes = expResult.toLong()
-            if (expResult == longRes.toDouble())
-                tvOperation.text = longRes.toString()
-            else
-                tvOperation.text = expResult.toString()
+            val result = evaluator.evaluate(expression)
+            val doubleRes = result.toLong()
+            tvOperation.text = if (result == doubleRes.toDouble()) doubleRes.toString()
+            else result.toString()
         } catch (e: Exception) {
             Log.d("Ошибка!", "Сообщение: ${e.message}")
         }
